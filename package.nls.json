@@ -1,0 +1,10 @@
+{
+    "extension.sundry.codeLineStatisticsViewName": "CodeLine Statistics",
+    "sundry.codelinestatistics.statistics.commandTitle": "Statistics",
+    "sundry.codelinestatistics.clear.commandTitle": "Clear",
+    "sundry.codelinestatistics.configuration.Title": "Sundry Code Line Statistics",
+    "Sundry.Codelinestatistics.GitAuthor.markdownDescription": "code commit user",
+    "Sundry.Codelinestatistics.GitAuthor.placeHolder": "commit user",
+    "Sundry.Codelinestatistics.GitAuthor.beginTime": "begin time",
+    "Sundry.Codelinestatistics.GitAuthor.endTime": "end time"
+}
