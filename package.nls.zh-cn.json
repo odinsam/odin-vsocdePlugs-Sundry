@@ -1,0 +1,10 @@
+{
+    "extension.sundry.codeLineStatisticsViewName": "代码统计",
+    "sundry.codelinestatistics.statistics.commandTitle": "统计",
+    "sundry.codelinestatistics.clear.commandTitle": "清空",
+    "sundry.codelinestatistics.configuration.Title": "代码统计",
+    "Sundry.Codelinestatistics.GitAuthor.markdownDescription": "代码提交人",
+    "Sundry.Codelinestatistics.GitAuthor.placeHolder": "代码提交人",
+    "Sundry.Codelinestatistics.GitAuthor.beginTime": "代码统计开始时间",
+    "Sundry.Codelinestatistics.GitAuthor.endTime": "代码统计结束时间"
+}

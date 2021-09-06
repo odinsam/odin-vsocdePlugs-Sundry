@@ -1,2 +1,5 @@
-# odin-vsocdePlugs-Sundry
-vsocde Plugs: git代码统计
+# Sundry
+
+[![](https://img.shields.io/nuget/v/Sundry)](https://www.nuget.org/packages/Sundry) ![](https://img.shields.io/badge/version-1.0.5-brightgreen.svg) ![](https://img.shields.io/github/issues/odinsam/Sundry) ![](https://img.shields.io/github/forks/odinsam/Sundry) ![](https://img.shields.io/github/stars/odinsam/Sundry) ![](https://img.shields.io/badge/platform-.Net_Core_5.0-brightgreen.svg) ![](https://img.shields.io/github/license/odinsam/Sundry) [![](https://img.shields.io/badge/Blog-odinsam.com-blue.svg)](https://odinsam.com)
+
+**简介:**
