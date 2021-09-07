@@ -2,19 +2,28 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.activate = void 0;
 const vscode = require("vscode");
-const codeStatisticsViewProvider_1 = require("./viewProviders/codeStatisticsViewProvider");
+const codeStatistics_1 = require("./sundry.Statistics/codeStatistics");
 function activate(context) {
-    const commitUser = vscode.workspace
-        .getConfiguration()
-        .get('Sundry.Codelinestatistics.GitAuthor');
-    const provider = new codeStatisticsViewProvider_1.CodeStatisticsViewProvider(commitUser, context.extensionUri);
-    context.subscriptions.push(vscode.window.registerWebviewViewProvider(codeStatisticsViewProvider_1.CodeStatisticsViewProvider.viewType, provider));
+    const codeStatistics = new codeStatistics_1.CodeStatistics();
+    //const provider = new CodeStatisticsViewProvider(context.extensionUri);
+    // context.subscriptions.push(
+    //     vscode.window.registerWebviewViewProvider(
+    //         CodeStatisticsViewProvider.viewType,
+    //         provider
+    //     )
+    // );
     context.subscriptions.push(vscode.commands.registerCommand('sundry.codelinestatistics.statistics', () => {
-        provider.codeLineStatistics();
+        codeStatistics.codeLineStatistics();
+        // provider.codeLineStatistics();
     }));
-    context.subscriptions.push(vscode.commands.registerCommand('sundry.codelinestatistics.clear', () => {
-        provider.clearCodeLineStatistics();
-    }));
+    // context.subscriptions.push(
+    //     vscode.commands.registerCommand(
+    //         'sundry.codelinestatistics.clear',
+    //         () => {
+    //             provider.clearCodeLineStatistics();
+    //         }
+    //     )
+    // );
 }
 exports.activate = activate;
 //# sourceMappingURL=extension.js.map
