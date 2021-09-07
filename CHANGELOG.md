@@ -1,15 +1,8 @@
-# Changelog
+## <small>1.0.1 (2021-09-07)</small>
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+* chore(release): 1.0.1 ([b3b77a0](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/b3b77a0))
+* ✨ feat: code line statistics (*) ([14beaeb](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/14beaeb))
+* Initial commit ([83af013](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/83af013))
 
-### 1.0.1 (2021-09-07)
 
-# Change Log
 
-All notable changes to the "sundry" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
