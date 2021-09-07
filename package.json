@@ -1,0 +1,125 @@
+{
+    "name": "sundry",
+    "displayName": "sundry",
+    "description": "sundry contains git-line-statistics",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/odinsam/odin-vsocdePlugs-Sundry"
+    },
+    "publisher": "odinsam",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/odinsam/odin-vsocdePlugs-Sundry/issues"
+    },
+    "homepage": "https://github.com/odinsam/odin-vsocdePlugs-Sundry#readme",
+    "version": "1.0.1",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:sundry.codelinestatistics.statistics"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "sundry.codelinestatistics.statistics",
+                "category": "Sundry Code Line Statistics",
+                "title": "%sundry.codelinestatistics.statistics.commandTitle%"
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "%sundry.codelinestatistics.configuration.Title%",
+            "properties": {
+                "sundry.codelinestatistics.statisticsType": {
+                    "type": "array",
+                    "default": [
+                        ".cs\\",
+                        ".html\\",
+                        ".html\\",
+                        ".java\\",
+                        ".xml\\",
+                        ".properties\\",
+                        ".json\\"
+                    ],
+                    "items": [
+                        ".cs\\",
+                        ".html\\",
+                        ".html\\",
+                        ".java\\",
+                        ".xml\\",
+                        ".properties\\",
+                        ".json\\"
+                    ],
+                    "markdownDescription": "statistics Type"
+                },
+                "sundry.codelinestatistics.statisticsAll": {
+                    "type": "string",
+                    "default": "git log  --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }'",
+                    "markdownDescription": "statistics Type"
+                },
+                "sundry.codelinestatistics.statisticsByTime": {
+                    "type": "string",
+                    "default": "git log --author=odinsam --since=2021-01-01 --until=2021-12-01 --format='%aN' | sort -u | while read name; do echo -en \"$name\\t\"; git log --author=\"$name\" --pretty=tformat: --numstat | grep \"\\($statisticsType$)$\" | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' -; done",
+                    "markdownDescription": "statistics Type"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "yarn run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "yarn run compile && yarn run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js",
+        "build": "vsce package",
+        "release": "standard-version",
+        "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^9.0.12",
+        "@types/glob": "^7.1.3",
+        "@types/mocha": "^8.2.2",
+        "@types/node": "14.x",
+        "@types/vscode": "^1.50.0",
+        "@typescript-eslint/eslint-plugin": "^4.26.0",
+        "@typescript-eslint/parser": "^4.26.0",
+        "better-than-before": "^1.0.0",
+        "chai": "^4.2.0",
+        "commitizen": "^3.1.1",
+        "compare-func": "^1.3.2",
+        "conventional-changelog-cli": "^2.0.21",
+        "conventional-changelog-core": "^3.2.2",
+        "coveralls": "^3.0.4",
+        "cz-conventional-changelog": "^2.1.0",
+        "eslint": "^7.27.0",
+        "git-dummy-commit": "^1.3.0",
+        "github-url-from-git": "^1.5.0",
+        "glob": "^7.1.7",
+        "istanbul": "^0.4.5",
+        "jscs": "^3.0.7",
+        "jshint": "^2.10.2",
+        "mocha": "^8.4.0",
+        "q": "^1.5.1",
+        "shelljs": "^0.8.3",
+        "standard-version": "^9.3.0",
+        "through2": "^3.0.1",
+        "typescript": "^4.3.2",
+        "vscode-test": "^1.5.2"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "dependencies": {
+        "exec-sh": "^0.4.0"
+    }
+}
