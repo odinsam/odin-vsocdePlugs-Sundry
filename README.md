@@ -4,6 +4,18 @@
 
 **简介:**
 
+驼峰大小写转换
+
+配置中默认以 空格 - ， 作为分隔符。可以配置
+
+复制需要转换的句子或者词组，右键 选择菜单 驼峰大小写转换 或者 快捷键
+
+大驼峰 cmd(ctrl)+t cmd(ctrl)+b
+
+小驼峰 cmd(ctrl)+t cmd(ctrl)+s
+
+---
+
 代码统计插件:
 命令:sundry.codelinestatistics.statistics
 
