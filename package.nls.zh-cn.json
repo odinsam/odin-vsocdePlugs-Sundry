@@ -6,5 +6,9 @@
     "Sundry.Codelinestatistics.GitAuthor.markdownDescription": "代码提交人",
     "Sundry.Codelinestatistics.GitAuthor.placeHolder": "代码提交人",
     "Sundry.Codelinestatistics.GitAuthor.beginTime": "代码统计开始时间",
-    "Sundry.Codelinestatistics.GitAuthor.endTime": "代码统计结束时间"
+    "Sundry.Codelinestatistics.GitAuthor.endTime": "代码统计结束时间",
+
+    "sundry.transCamel.trans.commandTitle": "字符串驼峰转换",
+    "sundry.transCamel.transBigCamel.commandTitle": "转大驼峰",
+    "sundry.transCamel.transSmallCamel.commandTitle": "转小驼峰"
 }

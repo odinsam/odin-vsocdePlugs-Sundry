@@ -2,6 +2,7 @@ import { Statistics_Config } from '../config/Statistics_Config';
 import * as vscode from 'vscode';
 import localize from '../localize';
 import { FormatDate } from '../utils/formatDate';
+import { StatisticsCommand } from '../config/statisticsCommand';
 
 const statistics_Config: Statistics_Config = {
     commitAuthor: '',
@@ -77,24 +78,28 @@ export class CodeStatistics {
                             'sundry.codelinestatistics.statisticsType'
                         );
                     const sst = statisticsType?.join('|');
-                    const statisticsAll = vscode.workspace
-                        .getConfiguration()
-                        .get<string>('sundry.codelinestatistics.statisticsAll');
-
-                    let statisticsByTime = vscode.workspace
-                        .getConfiguration()
-                        .get<string>(
-                            'sundry.codelinestatistics.statisticsByTime'
-                        );
+                    const statisticsAll = StatisticsCommand.StatisticsAll;
+                    let statisticsByTime = StatisticsCommand.StatisticsByTime;
                     statisticsByTime = statisticsByTime!
                         .replace('$author$', statistics_Config.commitAuthor)
                         .replace('$beginTime$', statistics_Config.beginTime)
                         .replace('$endTime$', statistics_Config.endTime)
                         .replace('$statisticsType$', sst!);
-                    vscode.window
-                        .createTerminal('codeStatistics')
-                        .sendText(statisticsAll!);
-                    vscode.window.terminals[0].sendText(statisticsByTime!);
+                    let termIndex: number | null = null;
+                    for (var i = 0; i < vscode.window.terminals.length; i++) {
+                        if (
+                            vscode.window.terminals[i].name == 'codeStatistics'
+                        ) {
+                            termIndex = i;
+                            break;
+                        }
+                    }
+                    const term =
+                        termIndex != null
+                            ? vscode.window.terminals[termIndex]
+                            : vscode.window.createTerminal('codeStatistics');
+                    term.sendText(statisticsAll!);
+                    term.sendText(statisticsByTime!);
                 });
             });
         });

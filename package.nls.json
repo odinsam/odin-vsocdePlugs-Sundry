@@ -6,5 +6,9 @@
     "Sundry.Codelinestatistics.GitAuthor.markdownDescription": "code commit user",
     "Sundry.Codelinestatistics.GitAuthor.placeHolder": "commit user",
     "Sundry.Codelinestatistics.GitAuthor.beginTime": "begin time",
-    "Sundry.Codelinestatistics.GitAuthor.endTime": "end time"
+    "Sundry.Codelinestatistics.GitAuthor.endTime": "end time",
+
+    "sundry.transCamel.trans.commandTitle": "words trans camel",
+    "sundry.transCamel.transBigCamel.commandTitle": "Trans Big Camel",
+    "sundry.transCamel.transSmallCamel.commandTitle": "Trans Samll Camel"
 }

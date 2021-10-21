@@ -4,6 +4,7 @@ exports.CodeStatistics = void 0;
 const vscode = require("vscode");
 const localize_1 = require("../localize");
 const formatDate_1 = require("../utils/formatDate");
+const statisticsCommand_1 = require("../config/statisticsCommand");
 const statistics_Config = {
     commitAuthor: '',
     beginTime: '',
@@ -73,21 +74,25 @@ class CodeStatistics {
                         .getConfiguration()
                         .get('sundry.codelinestatistics.statisticsType');
                     const sst = statisticsType === null || statisticsType === void 0 ? void 0 : statisticsType.join('|');
-                    const statisticsAll = vscode.workspace
-                        .getConfiguration()
-                        .get('sundry.codelinestatistics.statisticsAll');
-                    let statisticsByTime = vscode.workspace
-                        .getConfiguration()
-                        .get('sundry.codelinestatistics.statisticsByTime');
+                    const statisticsAll = statisticsCommand_1.StatisticsCommand.StatisticsAll;
+                    let statisticsByTime = statisticsCommand_1.StatisticsCommand.StatisticsByTime;
                     statisticsByTime = statisticsByTime
                         .replace('$author$', statistics_Config.commitAuthor)
                         .replace('$beginTime$', statistics_Config.beginTime)
                         .replace('$endTime$', statistics_Config.endTime)
                         .replace('$statisticsType$', sst);
-                    vscode.window
-                        .createTerminal('codeStatistics')
-                        .sendText(statisticsAll);
-                    vscode.window.terminals[0].sendText(statisticsByTime);
+                    let termIndex = null;
+                    for (var i = 0; i < vscode.window.terminals.length; i++) {
+                        if (vscode.window.terminals[i].name == 'codeStatistics') {
+                            termIndex = i;
+                            break;
+                        }
+                    }
+                    const term = termIndex != null
+                        ? vscode.window.terminals[termIndex]
+                        : vscode.window.createTerminal('codeStatistics');
+                    term.sendText(statisticsAll);
+                    term.sendText(statisticsByTime);
                 });
             });
         });
