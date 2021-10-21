@@ -1,3 +1,11 @@
+## <small>1.0.2 (2021-10-21)</small>
+
+* ✨ feat: 代码统计 (*) ([87d50ed](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/87d50ed))
+* ✨ feat: 添加大小写驼峰转换 (*) ([e30267b](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/e30267b))
+* readme ([9646c97](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/9646c97))
+
+
+
 ## <small>1.0.1 (2021-09-07)</small>
 
 * chore(release): 1.0.1 ([b3b77a0](https://github.com/odinsam/odin-vsocdePlugs-Sundry/commit/b3b77a0))
